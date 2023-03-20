@@ -151,5 +151,43 @@ public static void displaytable()
 	
 	
 }
+
+public static void UpdateStudent(int UserID ,String uname ,String uphone,String ucity ) 
+{
+	
+	try
+	{
+	
+		//jdbc code...
+		
+	 Connection con = Connectionprovider.createC();
+		
+		String q = "update students set sname =? , sphone=? ,scity=? where sid=? ; " ;
+		//prepared stmt
+		
+		PreparedStatement pstmt = con.prepareStatement(q);
+		//set 
+	
+		pstmt.setString(1, uname);
+		pstmt.setString(2, uphone);
+		pstmt.setString(3, ucity);
+		pstmt.setInt(4,UserID);
+		
+		//execute 
+		pstmt.executeUpdate();
+           
+
+
+		
+	}
+	catch(Exception e)
+	{
+		
+	
+		
+	} 
+	
+	
+}
    
 }

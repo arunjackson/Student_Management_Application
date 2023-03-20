@@ -23,7 +23,8 @@ public class Start {
 			System.out.println("press 1 to ADD Student ");
 			System.out.println("press 2 to DELET Student");
 			System.out.println("press 3 to DISPLAY Student");
-			System.out.println("press 4 to EXIT  Student");
+			System.out.println("press 4 to UPDATE Student");
+			System.out.println("press 5 to EXIT  Student");
 			System.out.println("");
 			
 			
@@ -81,8 +82,21 @@ public class Start {
 		{
 			StudentDao.displaytable();
 		}
-	
+		
 		else if (c==4)
+		{
+			System.out.println("enter student ID to update");
+			int userID=Integer.parseInt(br.readLine());
+			System.out.println("student name to update ");
+			String uname=br.readLine();
+			System.out.println("student phone to update ");
+			String uphone=br.readLine();
+			System.out.println("student city to update ");
+			String ucity=br.readLine();
+			StudentDao.UpdateStudent(userID,uname,uphone,ucity);
+		}
+	
+		else if (c==5)
 		{
 			System.out.println("thank you for using the app");
 			break;
